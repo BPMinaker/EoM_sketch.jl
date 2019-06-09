@@ -107,7 +107,7 @@ function sketch_prim(;name="unnamed",type="shere",axis=[0,0,1],loc=[0,0,0],rad=0
 		p5=loc+0.9*rad+r/4*axis
 		p6=loc+0.9*rad-r/4*axis
 		p7=loc+0.6375*rad
-		tang=temp[:,2]
+		tang=[1,0,0]
 
 		s="def "*name*"_loc $(Tuple(loc))\n"
 		s*="def "*name*"_axis $(axis)\n"
