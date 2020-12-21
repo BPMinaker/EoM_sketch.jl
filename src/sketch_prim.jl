@@ -6,8 +6,8 @@ function sketch_prim(;name="unnamed",type="shere",axis=[0,0,1],loc=[0,0,0],rad=0
 		bot=loc-[0,0,rad]
 		s="def "*name*"_loc $(Tuple(loc))\n"
 		s*="def "*name*"_bot $(Tuple(bot))\n"
-		s*="def "*name*" {sweep[cull=false,fill opacity=$opc,fill=$(col)!20,line width=0.8pt]{n_sphere_segs,rotate(360/n_sphere_segs,("*name*"_loc))} sweep {n_sphere_segs,rotate(180/n_sphere_segs,("*name*"_loc),[0,1,0])}("*name*"_bot)}\n"
-#		s*="put {view((vwpt),(lkat),[0,0,1])}{sweep[cull=false,fill opacity=" num2str(opc) ",fill=" col "!20,line width=0.8pt]{n_sphere_segs,rotate(360/n_sphere_segs,("*name*"loc))} sweep {n_sphere_segs,rotate(180/n_sphere_segs,("*name*"loc),[0,1,0])}("*name*"bot)}\n"
+		s*="def "*name*" {sweep[cull=false,fill opacity=$opc,fill=$(col)!20,line width=0.2pt]{n_sphere_segs,rotate(360/n_sphere_segs,("*name*"_loc))} sweep {n_sphere_segs,rotate(180/n_sphere_segs,("*name*"_loc),[0,1,0])}("*name*"_bot)}\n"
+#		s*="put {view((vwpt),(lkat),[0,0,1])}{sweep[cull=false,fill opacity=" num2str(opc) ",fill=" col "!20,line width=0.2pt]{n_sphere_segs,rotate(360/n_sphere_segs,("*name*"loc))} sweep {n_sphere_segs,rotate(180/n_sphere_segs,("*name*"loc),[0,1,0])}("*name*"bot)}\n"
 
 	elseif type=="tube"
 
@@ -21,9 +21,9 @@ function sketch_prim(;name="unnamed",type="shere",axis=[0,0,1],loc=[0,0,0],rad=0
 		s*="def "*name*"_p1 $(Tuple(p1))\n"
 		s*="def "*name*"_p2 $(Tuple(p2))\n"
 		s*="def "*name*"_l1 line("*name*"_p1)("*name*"_p2)\n"
-		s*="def "*name*" {sweep[cull=false,fill opacity=$opc,fill=$(col)!20,line width=0.8pt]{n_cyl_segs<>,rotate(360/n_cyl_segs,("*name*"_top),["*name*"_axis]) }{"*name*"_l1}}\n"
+		s*="def "*name*" {sweep[cull=false,fill opacity=$opc,fill=$(col)!20,line width=0.2pt]{n_cyl_segs<>,rotate(360/n_cyl_segs,("*name*"_top),["*name*"_axis]) }{"*name*"_l1}}\n"
 
-	#		s*="put {view((vwpt),(lkat),[0,0,1])}{sweep[cull=false,fill opacity=" num2str(opc) ",fill=" col "!20,line width=0.8pt]{n_cyl_segs<>,rotate(360/n_cyl_segs,("*name*"top),["*name*"axis]) }{"*name*"l1}}\n"
+	#		s*="put {view((vwpt),(lkat),[0,0,1])}{sweep[cull=false,fill opacity=" num2str(opc) ",fill=" col "!20,line width=0.2pt]{n_cyl_segs<>,rotate(360/n_cyl_segs,("*name*"top),["*name*"axis]) }{"*name*"l1}}\n"
 
 	elseif type=="cyl"
 
@@ -38,7 +38,7 @@ function sketch_prim(;name="unnamed",type="shere",axis=[0,0,1],loc=[0,0,0],rad=0
 		s*="def "*name*"_p1 $(Tuple(p1))\n"
 		s*="def "*name*"_p2 $(Tuple(p2))\n"
 		s*="def "*name*"_l1 line("*name*"_p1)("*name*"_p2)\n"
-		s*="def "*name*" {sweep[cull=false,fill opacity=$opc,fill=$(col)!20,line width=0.8pt]{n_cyl_segs<>,rotate(360/n_cyl_segs,("*name*"_loc),["*name*"_axis]) }{"*name*"_l1}}\n"
+		s*="def "*name*" {sweep[cull=false,fill opacity=$opc,fill=$(col)!20,line width=0.2pt]{n_cyl_segs<>,rotate(360/n_cyl_segs,("*name*"_loc),["*name*"_axis]) }{"*name*"_l1}}\n"
 
 
 	elseif type=="cone"
@@ -53,7 +53,7 @@ function sketch_prim(;name="unnamed",type="shere",axis=[0,0,1],loc=[0,0,0],rad=0
 		s*="def "*name*"_p1 $(Tuple(p1))\n"
 		s*="def "*name*"_p2 $(Tuple(p2))\n"
 		s*="def "*name*"_l1 line("*name*"_p1)("*name*"_p2)\n"
-		s*="def "*name*" {sweep[cull=false,fill opacity=$opc,fill=$(col)!20,line width=0.8pt]{n_cyl_segs<>,rotate(360/n_cyl_segs,("*name*"_top),["*name*"_axis]) }{"*name*"_l1}}\n"
+		s*="def "*name*" {sweep[cull=false,fill opacity=$opc,fill=$(col)!20,line width=0.2pt]{n_cyl_segs<>,rotate(360/n_cyl_segs,("*name*"_top),["*name*"_axis]) }{"*name*"_l1}}\n"
 
 	elseif type=="box"||type=="cube"
 
@@ -64,9 +64,9 @@ function sketch_prim(;name="unnamed",type="shere",axis=[0,0,1],loc=[0,0,0],rad=0
 		s*="def "*name*"_p1 $(Tuple(p1))\n"
 		s*="def "*name*"_p2 $(Tuple(p2))\n"
 		s*="def "*name*"_l1 line("*name*"_p1)("*name*"_p2)\n"
-		s*="def "*name*" {sweep[cull=false,fill opacity=$opc,fill=$(col)!20,line width=0.8pt]{n_segs<>,rotate(360/n_segs,("*name*"_loc))}{"*name*"_l1}}\n"
+		s*="def "*name*" {sweep[cull=false,fill opacity=$opc,fill=$(col)!20,line width=0.2pt]{n_segs<>,rotate(360/n_segs,("*name*"_loc))}{"*name*"_l1}}\n"
 
-#		s*="put {view((vwpt),(lkat),[0,0,1])}{sweep[cull=false,fill opacity=" num2str(opc) ",fill=" col "!20,line width=0.8pt]{n_segs<>,rotate(360/n_segs,("*name*"loc))}{"*name*"l1}}\n"
+#		s*="put {view((vwpt),(lkat),[0,0,1])}{sweep[cull=false,fill opacity=" num2str(opc) ",fill=" col "!20,line width=0.2pt]{n_segs<>,rotate(360/n_segs,("*name*"loc))}{"*name*"l1}}\n"
 
 	elseif type=="wheel"
 
@@ -91,9 +91,9 @@ function sketch_prim(;name="unnamed",type="shere",axis=[0,0,1],loc=[0,0,0],rad=0
 		s*="def "*name*"_p6 $(Tuple(p6))\n"
 
 		s*="def "*name*"_l1 line("*name*"_p6)("*name*"_p4)("*name*"_p2)("*name*"_p1)("*name*"_p3)("*name*"_p5)\n"
-		s*="def "*name*" sweep[cull=false,fill opacity=$opc,fill=$(col)!20,line width=0.8pt]{n_whl_segs<>,rotate(360/n_whl_segs,("*name*"_loc),["*name*"_axis]) }{"*name*"_l1}\n"
+		s*="def "*name*" sweep[cull=false,fill opacity=$opc,fill=$(col)!20,line width=0.2pt]{n_whl_segs<>,rotate(360/n_whl_segs,("*name*"_loc),["*name*"_axis]) }{"*name*"_l1}\n"
 
-#		s*="put {view((vwpt),(lkat),[0,0,1])}{sweep[cull=false,fill opacity=" num2str(opc) ",fill=" col "!20,line width=0.8pt]{n_whl_segs<>,rotate(360/n_whl_segs,("*name*"top),["*name*"axis]) }{"*name*"l1}}\n"
+#		s*="put {view((vwpt),(lkat),[0,0,1])}{sweep[cull=false,fill opacity=" num2str(opc) ",fill=" col "!20,line width=0.2pt]{n_whl_segs<>,rotate(360/n_whl_segs,("*name*"top),["*name*"axis]) }{"*name*"l1}}\n"
 
 	elseif type=="bwheel"
 
@@ -122,11 +122,11 @@ function sketch_prim(;name="unnamed",type="shere",axis=[0,0,1],loc=[0,0,0],rad=0
 
 		s*="def "*name*"_l1 line ("*name*"_p1)("*name*"_p3)("*name*"_p5)("*name*"_p6)("*name*"_p4)("*name*"_p2)\n"
 		s*="def "*name*"_l2 sweep{n_cyl_segs/2,rotate(2*87.2/n_cyl_segs,("*name*"_p7),["*name*"_tang])}("*name*"_p5)\n"
-		s*="def "*name*"_s1 sweep[cull=false,fill opacity=$opc,fill=$(col)!20,line width=0.8pt]{n_whl_segs<>,rotate(360/n_whl_segs,("*name*"_loc),["*name*"_axis]) }{"*name*"_l1}\n"
-		s*="def "*name*"_s2 sweep[cull=false,fill opacity=$opc,fill=$(col)!20,line width=0.8pt]{n_whl_segs,rotate(360/n_whl_segs,("*name*"_loc),["*name*"_axis]) }{"*name*"_l2}\n"
+		s*="def "*name*"_s1 sweep[cull=false,fill opacity=$opc,fill=$(col)!20,line width=0.2pt]{n_whl_segs<>,rotate(360/n_whl_segs,("*name*"_loc),["*name*"_axis]) }{"*name*"_l1}\n"
+		s*="def "*name*"_s2 sweep[cull=false,fill opacity=$opc,fill=$(col)!20,line width=0.2pt]{n_whl_segs,rotate(360/n_whl_segs,("*name*"_loc),["*name*"_axis]) }{"*name*"_l2}\n"
 		s*="def "*name*" {{" *name*"_s1}{"*name*"_s2}}\n"
 
-#		s*="put {view((vwpt),(lkat),[0,0,1])}{sweep[cull=false,fill opacity=" $(opc) ",fill=" col "!20,line width=0.8pt]{n_whl_segs<>,rotate(360/n_whl_segs,("*name*"top),["*name*"axis]) }{"*name*"l1}}\n"
+#		s*="put {view((vwpt),(lkat),[0,0,1])}{sweep[cull=false,fill opacity=" $(opc) ",fill=" col "!20,line width=0.2pt]{n_whl_segs<>,rotate(360/n_whl_segs,("*name*"top),["*name*"axis]) }{"*name*"l1}}\n"
 
 	else
 		error("Incorrect arguments to sketch.")
